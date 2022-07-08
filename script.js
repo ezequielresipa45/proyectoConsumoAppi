@@ -43,6 +43,16 @@ boton.addEventListener("click", () => {
           contenedor.appendChild(img);
           img.src = message[i];
         }
-      });
+      })
+
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Estamos con algunos inconvenientes",
+          footer: '<a href="index.html">Presione aquí para volver atras</a>',
+        });
+      })
+      .finally(() => {});
   }, 2000);
 });
